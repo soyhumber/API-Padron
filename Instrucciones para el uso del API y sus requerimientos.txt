@@ -1,0 +1,45 @@
+Instrucciones para el uso del API y sus requerimientos
+
+Las rutas por las cuales se podrán realizar consultas son:
+
+1-Total de provincias
+@app.route('/provincias')
+
+2- Provincia especifica
+@app.route('/provincias/<string:codigo>')
+
+3- Total de cantones
+@app.route('/cantones')
+
+4- Cantón especifico
+@app.route('/cantones/<string:codigo>')
+
+5- Cantones por provincia
+@app.route('/cantones/canton-provincia/<string:codigo>')
+
+6- Total de Distritos
+@app.route('/distritos')
+
+7- Distritos especifico
+@app.route('/distritos/<string:codigo>')
+
+8- Distritos por cantón
+@app.route('/distritos/distrito-canton/<string:codigo>')
+
+9- Distritos por Provincia
+@app.route('/distritos/distrito-provincia/<string:codigo>')
+
+La nomenclatura y forma para ingresar el codigo dependiendo de la ruta se realiza de la siguiente forma:
+
+Codigo de Provincia (1-8)
+Codigo de Cantón (01-48)
+Codigo de Distrito (001-124)
+
+
+El API necesita correr en un ambiente que cuente con los siguientes modulos/librerias
+Flask, render_template, request, jsonify, redirect, url_for, flash, configparser, psycopg2, flask_wtf, wtforms.
+
+
+El cliente funciona con Python3
+Solamente necesita que el API esté corriendo para poder acceder a las rutas.
+

@@ -1,0 +1,38 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+{%if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<form action="/mostrar" method="GET">
+</form>
+<hr>
+<hr>
+<div class="col-md-4 offset-md-4">
+<table class="table table-striped table-white">
+    <thead>
+        <tr>
+            <td>Codigo de Provincia</td>
+            <td>Nombre de Provincia</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for provincia in datos %}
+        <tr>
+            <td>{{provincia.0}}</td>
+            <td>{{provincia.1}}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
